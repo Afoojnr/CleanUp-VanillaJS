@@ -1,0 +1,287 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins, 'Encode Sans';
+}
+
+#login{
+    width: 100%;
+    height: 95vh;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+#cleanup-logo{
+    border: none;
+    height: 6vh;
+    width: 40%;
+    font-size: 0.5rem;
+    color:rgb(146, 146, 146);
+    margin-left: 30px;
+}
+
+span{
+    color: black;
+}
+
+#user-login{
+    border: none;
+    height: 90vh;
+    width: 25vw;
+    display: grid;
+    margin-left: 50px;
+    padding: 50px 30px;
+    border-radius: 20px 0 0 20px;
+    box-shadow: 1px 1px 3px 3px rgb(224, 222, 222, 0.5);
+}
+
+#sign-in{
+    text-align: center;
+}
+
+button{
+    background-color: white;
+    height: 2rem;
+    width: 95%;
+    border-radius:5px;
+}
+
+img{
+    position: relative;
+    top: 5px;
+    right: 10px;
+    border-radius: 50%;
+}
+
+#sign{
+    color: rgb(146, 146, 146);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+#line-break{
+    border: none;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+#line-break1{
+    border: none;
+    width: 6rem;
+    height: 0.7rem;
+    border-bottom: rgb(138, 137, 137) 1.5px solid;
+    
+}
+
+#line{
+    border: none;
+    width: 100%;
+    height: 1rem;
+    font-weight: 300;
+    font-size: 0.7rem;
+    margin-left: 30px;
+}
+
+#line-break2{
+    border: none;
+    width:7rem;
+    height: 0.7rem;
+    margin-left: 20px;
+    border-bottom: rgb(138, 137, 137) 1.5px solid;
+}
+
+input[type=text],[type=password]{
+    width: 100%;
+    height: 2rem;
+    border: none;
+    outline: none;
+    border-radius: 0 7px 7px 7px ;
+    padding: 2px 30px 2px 10px;
+    margin-top: 5px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    box-shadow: 2px 1px 7px 1px rgb(219, 218, 218);
+}
+
+#fg-pass{
+    font-size:0.8rem;
+    text-align: center;
+    color: rgb(146, 146, 146);
+}
+
+input[type=submit]{
+    width: 100%;
+    height: 2.5rem;
+    background-color: rgba(101, 192, 9, 1);
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgb(167, 165, 165);
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+}
+
+button{
+    background-color: white;
+    height: 2rem;
+    width: 95%;
+    border-radius:5px;
+    border: none;
+    box-shadow: 1px 1px 1px rgb(167, 165, 165);
+}
+
+a{
+    text-decoration: none;
+    color: rgba(101, 192, 9, 1);
+}
+
+.inbox{
+    color:grey;
+    position: relative; 
+    bottom:45px; 
+    left: 16rem;
+}
+
+.eye{
+    padding: 2px 8px 2px 10px;
+}
+
+@media screen and (max-width:768px) {
+    #user-login{
+        width: 40vw;
+        justify-content: center;
+    }
+    
+}
+
+@media screen and (max-width:600px) {
+    #user-login{
+        width: 50vw;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:425px) {
+     #user-login{
+        width: 50vw;
+        justify-content: center;
+    }
+    #line-break1{
+        width: 4rem;
+    }   
+    #line-break2{
+        width:4rem;
+    }
+}
+
+@media screen and (max-width:375px) {
+     #user-login{
+        width: 50vw;
+        justify-content: center;
+    }
+
+    #line-break1{
+        width: 2rem;
+    }   
+    #line-break2{
+        width:2rem;
+    }
+    button{
+        font-size: 0.6rem;
+    }
+}
+
+
+
+/*for img */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.image-bottle{
+    height: 88vh;
+}
+
+.image-bottle img{
+    height: 90vh;
+    width: 25vw;
+    margin-top: 6vh;
+    border-radius: 0 25px 25px 0;
+    box-shadow:1px 1px 3px 3px rgb(224, 222, 222, 0.5);
+}
+@media screen and (max-width:768px) {
+    .image-bottle img{
+        width: 40vw;
+    }
+}
+@media screen and (max-width:600px) {
+    .image-bottle img{
+        width:50vw
+    }
+}
+
+/*for wrapping*/
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#wrap{
+    display: flex;
+    flex-direction: row;
+    margin-left:270px;
+}
+.image-position a img{
+    border-radius: 50%;
+    position: relative; 
+    bottom: 20px; 
+    left: 270px;
+}
+@media screen and (max-width:768px) {
+    #wrap{
+        margin-left: 0px;
+        justify-content: center;
+        width: 100vw;
+    }
+    .image-position a img{
+        left:230px;
+        bottom:30px;
+    }
+    
+}
+@media screen and (max-width:600px) {
+    #wrap{
+        margin-left: 0px;
+        justify-content: center;
+        width: 100vw;
+    }
+    .image-position a img{
+        left:230px;
+        bottom:30px;
+    }
+    
+}
+@media screen and (max-width:425px) {
+     #wrap{
+        margin-left: 0px;
+        justify-self: center;
+    }
+
+    .image-position a img{
+        left:150px
+    }
+}
+
+
+@media screen and (max-width:375px) {
+    .image-position a img{
+        left: 100px;
+    }
+}

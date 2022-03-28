@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleanUp</title>
+</head>
+<link rel="stylesheet" href="login.css">
+<body>
+<div id="wrap">
+    <div class="form">
+        <div id="login">
+            <div id="cleanup-logo">
+                <h1>Clean<span>Up</span></h1>
+            </div>
+            <div id="user-login">
+                <div id="sign-in">
+                    <h2>Login!</h2>
+                </div>
+                <button><img src="./assets/googleicon.jpg" alt="google icon"><a href="#">Login With Google</a></button>
+                <div id="line-break">
+                    <div id="line-break1"></div>
+                    <p id="line">or</p>
+                    <div id="line-break2"></div>
+                </div>
+                <div id="email-in">
+                    <form @submit.prevent="loginUser" >
+                        <label for="email">Email Address </label><br>
+                        <input type="text" name="email" placeholder="Email Address" v-model="form.email" minlength="6" maxlength="100"><font-awesome-icon icon="envelope" class="inbox"/>
+                    </form>
+                </div>
+                <div id="password-in">
+                    <form @submit.prevent="loginUser">
+                        <label for="password">Password</label><br>
+                        <input type="password" name="password" placeholder="Password" v-model="form.password" minlength="6" maxlength="100" class="eye">
+                    </form>
+                </div>
+                <div id="forget-pass">
+                    <p id="fg-pass">Forget Password?<a href="#"> Click here.</a></p>
+                </div>
+                <div id="login-btn">
+                    <form @submit.prevent="loginUser">
+                        <input type="submit" value="Login">
+                    </form>
+                </div>
+                <p id="sign">Dont have an account? <nuxt-link to="/signup">Sign Up</nuxt-link></p>
+            </div>
+        </div>
+    </div>
+
+        <!--for the image on login form-->
+
+
+    <div class="image-position">
+        <div class="image-bottle">
+            <img src="./assets/bottle.jpg" alt="bottle">
+        </div>
+        <div>
+        <a href="#"><img src="./assets/whatsapp.jpg" height="55px" width="55px" alt="whatsapp icon"></a>
+        </div>
+            
+    </div>
+</div>
+    
+
+
+
+
+
+
+
+
+    <script>
+        export default {
+            data(){
+                return {
+                    form: {
+                        email: "",
+                        password: ""
+                    }
+                }
+            },
+            methods: {
+            async loginUser() {
+                this.$toast.info('Logging in...')
+              try {
+               const response =  await this.$fire.auth.signInWithEmailAndPassword(
+                  this.form.email,
+                  this.form.password
+                );
+                this.$toast.success('Logged in!')
+                this.$router.push("/dashboard");
+                console.log(response)
+                this.$store.dispatch("onAuthStateChangedAction", {authUser: response.user})
+              } catch (error) {
+               this.$toast.error(error.message)
+              }
+            }
+            }
+        }
+        </script>
+</body>
+</html>
